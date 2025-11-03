@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wu Wei Neurospicy MX - Moda Consciente</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #D81B60, #7B1FA2, #0057FF);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #D81B60, #7B1FA2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .hamburger {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.open .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.open .line2 {
+            opacity: 0;
+        }
+        
+        .hamburger.open .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateX(10px);
+            color: #FFD600;
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="min-h-full"><!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-sm shadow-lg">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-24 sm:h-28 md:h-32 lg:h-36"><!-- Logo -->
+     <div class="flex-shrink-0"><img src="https://raw.githubusercontent.com/frontenddeveloper2025dev/landingpage/refs/heads/main/wuwei%20logo.png" alt="Wu Wei Logo" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto" onerror="this.style.display='none';">
+     </div><!-- Desktop Menu -->
+     <div class="hidden md:block">
+      <div class="ml-10 flex items-baseline space-x-8"><a href="#inicio" class="text-gray-800 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Inicio</a> <a href="#nosotros" class="text-gray-800 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Nosotros</a> <a href="#mision" class="text-gray-800 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Misión</a> <a href="#vision" class="text-gray-800 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Visión</a> <a href="#valores" class="text-gray-800 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Valores</a> <a href="#contacto" class="text-gray-800 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Contacto</a>
+      </div>
+     </div><!-- Mobile menu button -->
+     <div class="md:hidden"><button id="mobile-menu-button" class="hamburger inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-purple-600 focus:outline-none">
+       <div class="w-6 h-6 flex flex-col justify-center items-center"><span class="line1 bg-current block h-0.5 w-6 rounded-sm transition-all duration-300"></span> <span class="line2 bg-current block h-0.5 w-6 rounded-sm mt-1 transition-all duration-300"></span> <span class="line3 bg-current block h-0.5 w-6 rounded-sm mt-1 transition-all duration-300"></span>
+       </div></button>
+     </div>
+    </div>
+   </div><!-- Mobile Menu -->
+   <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-gradient-to-br from-purple-600 to-pink-600 z-[60]">
+    <div class="px-6 pt-20 pb-6 space-y-6"><a href="#inicio" class="nav-link block text-white text-xl font-medium py-3 border-b border-white border-opacity-20">Inicio</a> <a href="#nosotros" class="nav-link block text-white text-xl font-medium py-3 border-b border-white border-opacity-20">Nosotros</a> <a href="#mision" class="nav-link block text-white text-xl font-medium py-3 border-b border-white border-opacity-20">Misión</a> <a href="#vision" class="nav-link block text-white text-xl font-medium py-3 border-b border-white border-opacity-20">Visión</a> <a href="#valores" class="nav-link block text-white text-xl font-medium py-3 border-b border-white border-opacity-20">Valores</a> <a href="#contacto" class="nav-link block text-white text-xl font-medium py-3 border-b border-white border-opacity-20">Contacto</a> <!-- Social Links in Mobile Menu -->
+     <div class="pt-6">
+      <p class="text-white text-lg font-medium mb-4">Síguenos</p>
+      <div class="flex space-x-4"><a href="https://www.instagram.com/wuwei_neurospicymx/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg></a> <a href="https://mx.pinterest.com/wuweiclothing/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001.017.001z" />
+        </svg></a> <a href="https://github.com/wuweiclomx" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 p-3 rounded-full hover:bg-opacity-30 transition-all">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg></a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <main><!-- Hero Section -->
+   <section id="inicio" class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-40 sm:pt-44 md:pt-48 lg:pt-52">
+    <div class="text-center text-white px-4 sm:px-6 max-w-5xl relative z-10"><!-- Logo integrado -->
+     <div class="mb-6 sm:mb-8"><a id="logo-link" href="#" class="inline-block transition-transform hover:scale-105"> <img src="https://raw.githubusercontent.com/frontenddeveloper2025dev/landingpage/refs/heads/main/wuwei%20logo.png" alt="Wu Wei Neurospicy MX Logo" class="h-24 sm:h-32 md:h-48 lg:h-56 w-auto mx-auto mb-4 sm:mb-6" onerror="this.style.display='none'; console.error('Logo failed to load');"> </a>
+     </div>
+     <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight px-2">Wu Wei Neurospicy MX</h1>
+     <p id="hero-subtitle" class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 opacity-90 px-2">moda consciente con flow espiritual</p><button id="cta-button" class="bg-white text-purple-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-opacity-90 transition-all"> Descubre tu kimono </button>
+    </div>
+   </section><!-- Descripción de la marca -->
+   <section id="nosotros" class="py-12 sm:py-16 px-4 sm:px-6" style="background-color: #001F3F;">
+    <div class="max-w-4xl mx-auto text-center text-white">
+     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 gradient-text px-2">Un refugio textil para almas libres</h2>
+     <div class="text-base sm:text-lg leading-relaxed space-y-4 px-2">
+      <p>Wu Wei Clothing MX es una marca nacida en la <strong>Ciudad de México</strong> como un refugio textil para almas libres, mentes neurospicy y cuerpos que no entran en moldes normativos</p>
+      <p>No es solo ropa, es presencia, es acto creativo, es una forma de habitar el cuerpo con amor, con flow y sin permiso.</p>
+     </div><!-- Botón de regreso al inicio -->
+     <div class="mt-8"><a href="#inicio" class="inline-flex items-center bg-white bg-opacity-20 text-white px-4 py-2 rounded-full hover:bg-opacity-30 transition-all">
+       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+       </svg> Volver al inicio </a>
+     </div>
+    </div>
+   </section><!-- Cada kimono es -->
+   <section class="py-12 sm:py-16 px-4 sm:px-6" style="background-color: #009688;">
+    <div class="max-w-4xl mx-auto text-center text-white">
+     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 px-2">Cada kimono es:</h2>
+     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+      <div class="card-hover bg-white bg-opacity-10 p-6 sm:p-8 rounded-2xl backdrop-blur-sm">
+       <h3 class="text-lg sm:text-xl font-semibold">un ritual</h3>
+      </div>
+      <div class="card-hover bg-white bg-opacity-10 p-6 sm:p-8 rounded-2xl backdrop-blur-sm">
+       <h3 class="text-lg sm:text-xl font-semibold">una armadura suave</h3>
+      </div>
+      <div class="card-hover bg-white bg-opacity-10 p-6 sm:p-8 rounded-2xl backdrop-blur-sm sm:col-span-2 md:col-span-1">
+       <h3 class="text-lg sm:text-xl font-semibold">una declaración viva de quién eres</h3>
+      </div>
+     </div><!-- Botón de regreso al inicio -->
+     <div class="mt-8"><a href="#inicio" class="inline-flex items-center bg-white bg-opacity-20 text-white px-4 py-2 rounded-full hover:bg-opacity-30 transition-all">
+       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+       </svg> Volver al inicio </a>
+     </div>
+    </div>
+   </section><!-- Wu Wei Significado -->
+   <section class="py-12 sm:py-16 px-4 sm:px-6" style="background-color: #FFD600;">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center text-gray-800 px-2">¿Qué significa Wu Wei?</h2>
+     <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl">
+      <p class="text-base sm:text-lg mb-6 text-gray-700">Wu Wei es un principio del Taoísmo que significa: <strong>no forzar, fluir con la vida, actuar sin violencia interna.</strong></p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-gray-700">
+       <div class="space-y-3 sm:space-y-4">
+        <p class="text-sm sm:text-base">No es pasividad</p>
+        <p class="text-sm sm:text-base">Es potencia tranquila</p>
+        <p class="text-sm sm:text-base">Es crear desde el centro</p>
+       </div>
+       <div class="space-y-3 sm:space-y-4">
+        <p class="text-sm sm:text-base">Es seguir tu intuición sin burnout</p>
+        <p class="text-sm sm:text-base">Wu Wei no te obliga a correr.</p>
+        <p class="text-sm sm:text-base">Te invita a respirar, a actuar con intención, y a vivir desde el presente</p>
+       </div>
+      </div>
+     </div><!-- Botón de regreso al inicio -->
+     <div class="mt-8 text-center"><a href="#inicio" class="inline-flex items-center bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-all">
+       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+       </svg> Volver al inicio </a>
+     </div>
+    </div>
+   </section><!-- Misión -->
+   <section id="mision" class="py-12 sm:py-16 px-4 sm:px-6" style="background-color: #E53935;">
+    <div class="max-w-4xl mx-auto text-white">
+     <h2 id="mission-title" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center px-2">Misión</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div class="space-y-3 sm:space-y-4 text-base sm:text-lg px-2">
+       <p>Vestir el alma con propósito.</p>
+       <p>Diseñar prendas que te abracen, no que te limiten.</p>
+      </div>
+      <div class="space-y-3 sm:space-y-4 text-base sm:text-lg px-2">
+       <p>Convertir cada kimono en un mantra, un espejo, un refugio.</p>
+       <p>Empoderar con diseño, espiritualidad y autoexpresión radical</p>
+      </div>
+     </div><!-- Botón de regreso al inicio -->
+     <div class="mt-8 text-center"><a href="#inicio" class="inline-flex items-center bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-all">
+       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+       </svg> Volver al inicio </a>
+     </div>
+    </div>
+   </section><!-- Visión -->
+   <section id="vision" class="py-12 sm:py-16 px-4 sm:px-6" style="background-color: #FF9800;">
+    <div class="max-w-4xl mx-auto text-white">
+     <h2 id="vision-title" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center px-2">Visión</h2>
+     <div class="bg-white bg-opacity-10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 backdrop-blur-sm">
+      <p class="text-lg sm:text-xl mb-6 text-center">Queremos ser más que una marca</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-base sm:text-lg">
+       <div class="space-y-3 sm:space-y-4">
+        <p>Queremos ser comunidad</p>
+        <p>Queremos ser casa para lxs neurospicy</p>
+        <p>Queremos elevar a quienes crean desde el alma</p>
+       </div>
+       <div class="space-y-3 sm:space-y-4">
+        <p>Queremos que la ropa no sea máscara, sino manifestación</p>
+        <p>Wu Wei es tech y es arte</p>
+        <p>Es compasión y es claridad</p>
+        <p>Es futuro suave, sin moldes</p>
+       </div>
+      </div>
+     </div><!-- Botón de regreso al inicio -->
+     <div class="mt-8 text-center"><a href="#inicio" class="inline-flex items-center bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-all">
+       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+       </svg> Volver al inicio </a>
+     </div>
+    </div>
+   </section><!-- Valores -->
+   <section id="valores" class="py-12 sm:py-16 px-4 sm:px-6" style="background-color: #AEEA00;">
+    <div class="max-w-6xl mx-auto">
+     <h2 id="values-title" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center text-gray-800 px-2">Valores Wu Wei</h2>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="card-hover bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+       <h3 class="font-bold text-gray-800 mb-2 text-sm sm:text-base">Empoderamiento real</h3>
+       <p class="text-gray-600 text-xs sm:text-sm">Vestirte como eres, vivir sin filtros</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+       <h3 class="font-bold text-gray-800 mb-2 text-sm sm:text-base">Flow auténtico</h3>
+       <p class="text-gray-600 text-xs sm:text-sm">Acción alineada, no reacción desesperada</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+       <h3 class="font-bold text-gray-800 mb-2 text-sm sm:text-base">Inclusión corporal</h3>
+       <p class="text-gray-600 text-xs sm:text-sm">Tu cuerpo es perfecto, la ropa se adapta</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+       <h3 class="font-bold text-gray-800 mb-2 text-sm sm:text-base">Neurodivergencia visible</h3>
+       <p class="text-gray-600 text-xs sm:text-sm">Pensar diferente es poder</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+       <h3 class="font-bold text-gray-800 mb-2 text-sm sm:text-base">Género libre</h3>
+       <p class="text-gray-600 text-xs sm:text-sm">No más etiquetas. Solo expresión pura</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+       <h3 class="font-bold text-gray-800 mb-2 text-sm sm:text-base">Compasión encarnada</h3>
+       <p class="text-gray-600 text-xs sm:text-sm">Inspiración en Avalokiteshvara y Tara Verde</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+       <h3 class="font-bold text-gray-800 mb-2 text-sm sm:text-base">Mindfulness textil</h3>
+       <p class="text-gray-600 text-xs sm:text-sm">Diseño que respira contigo</p>
+      </div>
+      <div class="card-hover bg-white rounded-2xl p-4 sm:p-6 shadow-lg">
+       <h3 class="font-bold text-gray-800 mb-2 text-sm sm:text-base">Autonomía radical</h3>
+       <p class="text-gray-600 text-xs sm:text-sm">Creamos desde dentro, para nosotrxs, por nosotrxs</p>
+      </div>
+     </div><!-- Botón de regreso al inicio -->
+     <div class="mt-8 text-center"><a href="#inicio" class="inline-flex items-center bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-all">
+       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+       </svg> Volver al inicio </a>
+     </div>
+    </div>
+   </section><!-- Redes Sociales -->
+   <section id="contacto" class="py-12 sm:py-16 px-4 sm:px-6" style="background-color: #00E5FF;">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-gray-800 px-2">Conecta con nosotros</h2>
+     <p class="text-base sm:text-lg mb-6 sm:mb-8 text-gray-700 px-2">Únete a nuestra comunidad neurospicy y descubre el flow Wu Wei</p><!-- Redes Sociales con Enlaces -->
+     <div class="flex justify-center flex-wrap gap-4 sm:gap-6 mb-8 sm:mb-12"><!-- Instagram --> <a href="https://www.instagram.com/wuwei_neurospicymx/" target="_blank" rel="noopener noreferrer" class="social-icon bg-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl" onclick="window.open('https://www.instagram.com/wuwei_neurospicymx/', '_blank'); return false;">
+       <svg class="w-6 h-6 sm:w-8 sm:h-8" style="color: #E4405F;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+       </svg></a> <!-- Pinterest --> <a href="https://mx.pinterest.com/wuweiclothing/" target="_blank" rel="noopener noreferrer" class="social-icon bg-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl" onclick="window.open('https://mx.pinterest.com/wuweiclothing/', '_blank')">
+       <svg class="w-6 h-6 sm:w-8 sm:h-8" style="color: #BD081C;" fill="currentColor" viewbox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001.017.001z" />
+       </svg></a> <!-- GitHub --> <a href="https://github.com/wuweiclomx" target="_blank" rel="noopener noreferrer" class="social-icon bg-white p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl" onclick="window.open('https://github.com/wuweiclomx', '_blank')">
+       <svg class="w-6 h-6 sm:w-8 sm:h-8" style="color: #333;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+       </svg></a>
+     </div><!-- Información de Contacto en Texto -->
+     <div class="bg-white bg-opacity-20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 backdrop-blur-sm">
+      <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">Información de Contacto</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 text-gray-700">
+       <div class="space-y-3 sm:space-y-4">
+        <div>
+         <h4 class="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">Email</h4>
+         <p class="text-sm sm:text-lg">wuweiclothing@gmail.com</p>
+        </div>
+        <div>
+         <h4 class="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">WhatsApp</h4>
+         <p class="text-sm sm:text-lg">5610677516</p>
+        </div>
+       </div>
+       <div>
+        <h4 class="font-semibold text-gray-800 mb-1 sm:mb-2 text-sm sm:text-base">Dirección</h4>
+        <p class="text-sm sm:text-lg">Diagonal Patriotismo 6<br>
+          Hipódromo Condesa<br>
+          Cuauhtémoc, 06170<br>
+          Ciudad de México, CDMX</p>
+       </div>
+      </div>
+     </div><!-- Botón de regreso al inicio -->
+     <div class="mt-8 text-center"><a href="#inicio" class="inline-flex items-center bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition-all">
+       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+       </svg> Volver al inicio </a>
+     </div>
+    </div>
+   </section><!-- Footer CTA -->
+   <footer class="gradient-bg py-12 sm:py-16 px-4 sm:px-6 text-center text-white">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 px-2">¿Listo para tu transformación Wu Wei?</h2>
+    <p class="text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 px-2">Encuentra el kimono que habla tu idioma espiritual</p><button class="bg-white text-purple-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-opacity-90 transition-all"> Explorar colección </button>
+   </footer>
+  </main>
+  <script>
+        const defaultConfig = {
+            logo_link: "#",
+            hero_title: "Wu Wei Neurospicy MX",
+            hero_subtitle: "moda consciente con flow espiritual",
+            cta_button: "Descubre tu kimono",
+            mission_title: "Misión",
+            vision_title: "Visión",
+            values_title: "Valores Wu Wei",
+            background_color: "#D81B60",
+            surface_color: "#7B1FA2",
+            text_color: "#FFFFFF",
+            primary_action_color: "#FFD600",
+            secondary_action_color: "#00E5FF",
+            font_family: "Inter",
+            font_size: 16
+        };
+
+        async function onConfigChange(config) {
+            const logoLink = document.getElementById('logo-link');
+            const heroTitle = document.getElementById('hero-title');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            const ctaButton = document.getElementById('cta-button');
+            const missionTitle = document.getElementById('mission-title');
+            const visionTitle = document.getElementById('vision-title');
+            const valuesTitle = document.getElementById('values-title');
+
+            if (logoLink) logoLink.href = config.logo_link || defaultConfig.logo_link;
+            if (heroTitle) heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
+            if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+            if (ctaButton) ctaButton.textContent = config.cta_button || defaultConfig.cta_button;
+            if (missionTitle) missionTitle.textContent = config.mission_title || defaultConfig.mission_title;
+            if (visionTitle) visionTitle.textContent = config.vision_title || defaultConfig.vision_title;
+            if (valuesTitle) valuesTitle.textContent = config.values_title || defaultConfig.values_title;
+
+            // Apply colors
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+            const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+
+            document.documentElement.style.setProperty('--bg-color', backgroundColor);
+            document.documentElement.style.setProperty('--surface-color', surfaceColor);
+            document.documentElement.style.setProperty('--text-color', textColor);
+            document.documentElement.style.setProperty('--primary-action', primaryActionColor);
+            document.documentElement.style.setProperty('--secondary-action', secondaryActionColor);
+
+            // Apply font
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseFontStack = 'system-ui, -apple-system, sans-serif';
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+            // Apply font size
+            const baseSize = config.font_size || defaultConfig.font_size;
+            document.documentElement.style.fontSize = `${baseSize}px`;
+        }
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburger = document.querySelector('.hamburger');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+                hamburger.classList.toggle('open');
+            });
+            
+            // Close menu when clicking on links
+            const mobileLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('open');
+                });
+            });
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 180; // Account for fixed nav height
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.surface_color || defaultConfig.surface_color,
+                            set: (value) => {
+                                config.surface_color = value;
+                                window.elementSdk.setConfig({ surface_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                            set: (value) => {
+                                config.primary_action_color = value;
+                                window.elementSdk.setConfig({ primary_action_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                            set: (value) => {
+                                config.secondary_action_color = value;
+                                window.elementSdk.setConfig({ secondary_action_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: {
+                        get: () => config.font_family || defaultConfig.font_family,
+                        set: (value) => {
+                            config.font_family = value;
+                            window.elementSdk.setConfig({ font_family: value });
+                        }
+                    },
+                    fontSizeable: {
+                        get: () => config.font_size || defaultConfig.font_size,
+                        set: (value) => {
+                            config.font_size = value;
+                            window.elementSdk.setConfig({ font_size: value });
+                        }
+                    }
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["logo_link", config.logo_link || defaultConfig.logo_link],
+                    ["hero_title", config.hero_title || defaultConfig.hero_title],
+                    ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                    ["cta_button", config.cta_button || defaultConfig.cta_button],
+                    ["mission_title", config.mission_title || defaultConfig.mission_title],
+                    ["vision_title", config.vision_title || defaultConfig.vision_title],
+                    ["values_title", config.values_title || defaultConfig.values_title]
+                ])
+            });
+        }
+
+
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'998850b7e5803834',t:'MTc2MjEzNTYxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
